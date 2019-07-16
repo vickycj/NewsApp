@@ -4,7 +4,7 @@ import android.view.Menu
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.GridLayoutManager
+
 import androidx.recyclerview.widget.RecyclerView
 import com.vicky.apps.datapoints.base.BaseActivity
 import com.vicky.apps.datapoints.common.ViewModelProviderFactory
@@ -13,15 +13,15 @@ import com.vicky.apps.datapoints.ui.adapter.DataAdapter
 import com.vicky.apps.datapoints.ui.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
-import android.app.SearchManager
-import android.content.Context
-import android.content.Intent
-import android.text.TextUtils
+
 import android.view.MenuItem
-import android.widget.SearchView
+
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.vicky.apps.datapoints.base.AppConstants
+
 import com.vicky.apps.datapoints.ui.viewmodel.NewsDataList
+import com.vicky.apps.datapoints.R
+
+
 
 
 class MainActivity : BaseActivity() {
@@ -39,7 +39,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.vicky.apps.datapoints.R.layout.activity_main)
+        setContentView(R.layout.activity_main)
         initializeValues()
         inilializingRecyclerView()
         viewModel.getDataFromRemote()
@@ -75,12 +75,32 @@ class MainActivity : BaseActivity() {
     }
 
 
-    private fun successCallback(data:List<NewsDataList>){
-        updateData(data)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return true
     }
 
-    private fun updateData(data:List<NewsDataList>){
-        adapter.updateData(data)
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.recent -> {
+                viewModel.sortToRecents()
+                updateData()
+            }
+
+            R.id.popular -> {
+                viewModel.sortToPopular()
+                updateData()
+            }
+        }
+        return true
+    }
+
+    private fun successCallback(data:List<NewsDataList>){
+        updateData()
+    }
+
+    private fun updateData(){
+        adapter.updateData(viewModel.getData())
     }
 
 

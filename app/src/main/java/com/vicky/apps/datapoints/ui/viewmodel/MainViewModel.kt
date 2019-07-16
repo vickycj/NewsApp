@@ -60,6 +60,7 @@ class MainViewModel(private val repository: Repository,
         data.forEach {
             it.uiDateStamp = formatTheData(it.timeCreated)
         }
+        sortToRecents()
         response.postValue(data)
 
     }
@@ -74,10 +75,23 @@ class MainViewModel(private val repository: Repository,
             .compose(schedulerProvider.getSchedulersForSingle())
     }
 
+    fun sortToRecents() {
+      val sortedData =   data.sortedBy {
+            it.timeCreated
+        }
 
+        this.data =sortedData
+    }
 
+    fun sortToPopular() {
 
+       val sortedData =  data.sortedBy {
+            it.rank
+        }
 
+        this.data =sortedData
+
+    }
 
 
 }
