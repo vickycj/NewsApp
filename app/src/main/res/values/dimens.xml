@@ -12,7 +12,6 @@
     <dimen name="DP_140">140dp</dimen>
     <dimen name="SP_12">12sp</dimen>
     <dimen name="DP_262">262dp</dimen>
-    <dimen name="DP_16">16dp</dimen>
     <dimen name="DP_4">4dp</dimen>
     <dimen name="DP_12">12dp</dimen>
 </resources>

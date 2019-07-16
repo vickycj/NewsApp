@@ -19,7 +19,9 @@ import android.content.Intent
 import android.text.TextUtils
 import android.view.MenuItem
 import android.widget.SearchView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.vicky.apps.datapoints.base.AppConstants
+import com.vicky.apps.datapoints.ui.viewmodel.NewsDataList
 
 
 class MainActivity : BaseActivity() {
@@ -38,19 +40,23 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.vicky.apps.datapoints.R.layout.activity_main)
-        //inilializingRecyclerView()
         initializeValues()
-
+        inilializingRecyclerView()
+        viewModel.getDataFromRemote()
     }
 
     private fun inilializingRecyclerView() {
 
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
 
-        adapter = DataAdapter()
+        adapter = DataAdapter(getEmptyData())
 
         recyclerView.adapter = adapter
+    }
+
+    private fun getEmptyData(): List<NewsDataList> {
+        return ArrayList()
     }
 
     private fun initializeValues() {
@@ -61,22 +67,20 @@ class MainActivity : BaseActivity() {
 
         viewModel.getSubscription().observe(this, Observer {
             if(it.isNotEmpty()){
-                successCallback()
+                successCallback(it)
             }else{
                 failureCallback()
             }
         })
-
-        viewModel.getDataFromRemote()
     }
 
 
-    private fun successCallback(){
-        //updateData()
+    private fun successCallback(data:List<NewsDataList>){
+        updateData(data)
     }
 
-    private fun updateData(){
-        adapter.updateData()
+    private fun updateData(data:List<NewsDataList>){
+        adapter.updateData(data)
     }
 
 
