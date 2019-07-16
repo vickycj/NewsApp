@@ -67,8 +67,6 @@ class MainActivity : BaseActivity() {
             }
         })
 
-
-
         viewModel.getDataFromRemote()
     }
 

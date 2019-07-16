@@ -7,4 +7,12 @@
     <dimen name="DP_80">80dp</dimen>
     <dimen name="DP_32">32dp</dimen>
     <dimen name="DP_24">24dp</dimen>
+    <dimen name="SP_16">16sp</dimen>
+    <dimen name="SP_14">14sp</dimen>
+    <dimen name="DP_140">140dp</dimen>
+    <dimen name="SP_12">12sp</dimen>
+    <dimen name="DP_262">262dp</dimen>
+    <dimen name="DP_16">16dp</dimen>
+    <dimen name="DP_4">4dp</dimen>
+    <dimen name="DP_12">12dp</dimen>
 </resources>

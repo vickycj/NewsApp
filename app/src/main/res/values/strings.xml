@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AlbumList</string>
+    <string name="title_text">Congrats! You are featured on Home page as a recommended seller!</string>
+    <string name="subtitle_text">Hi rita12399, thank you for being awesome on Carousell! We want more Carousellers see you and your listings and hope you can keep up the good listings and bring good experience to fellow Carousellers.</string>
+    <string name="time_text_val">5 hours ago</string>
 </resources>
