@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 
 interface ApiService {
-    @GET("")
+    @GET("carousell-interview-assets/android/carousell_news.json")
     fun getDataFromService(): Single<List<Any>>
 }
