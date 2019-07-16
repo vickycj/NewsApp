@@ -14,4 +14,7 @@
     <dimen name="DP_262">262dp</dimen>
     <dimen name="DP_4">4dp</dimen>
     <dimen name="DP_12">12dp</dimen>
+    <dimen name="DP_14">14dp</dimen>
+    <dimen name="DP_38">38dp</dimen>
+    <dimen name="DP_34">34dp</dimen>
 </resources>

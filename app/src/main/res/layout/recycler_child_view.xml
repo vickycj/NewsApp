@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_marginLeft="@dimen/DP_16"
         android:layout_marginRight="@dimen/DP_16"
-        android:layout_height="@dimen/DP_262">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/overall_parent"
@@ -30,23 +30,24 @@
             android:layout_height="@dimen/DP_140"
             android:src="@drawable/avatar" />
 
-        <TextView
-            android:id="@+id/title_text"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="@string/title_text"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/SP_16"
-            android:maxLines="2"
-            android:layout_marginTop="@dimen/DP_12"
-            android:layout_marginLeft="@dimen/DP_16"
-            android:layout_marginRight="@dimen/DP_16"
-            android:layout_marginBottom="@dimen/DP_4"/>
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DP_38"
+                android:layout_marginLeft="@dimen/DP_16"
+                android:layout_marginTop="@dimen/DP_12"
+                android:layout_marginRight="@dimen/DP_16"
+                android:layout_marginBottom="@dimen/DP_4"
+                android:maxLines="2"
+                android:text="@string/title_text"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/SP_16"
+                android:textStyle="bold" />
 
         <TextView
             android:id="@+id/subtitle_text"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/DP_34"
             android:text="@string/subtitle_text"
             android:textColor="@color/textColor"
             android:textSize="@dimen/SP_14"
@@ -58,12 +59,13 @@
         <TextView
             android:id="@+id/time_text"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/DP_14"
             android:textSize="@dimen/SP_12"
             android:textColor="@color/timeTextColor"
             android:text="@string/time_text_val"
             android:layout_marginLeft="@dimen/DP_16"
-            android:layout_marginRight="@dimen/DP_16"/>
+            android:layout_marginRight="@dimen/DP_16"
+            android:layout_marginBottom="@dimen/DP_12"/>
 
 
         </LinearLayout>
