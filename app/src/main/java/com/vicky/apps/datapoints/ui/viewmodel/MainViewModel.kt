@@ -30,12 +30,14 @@ class MainViewModel(private val repository: Repository,
 
 
 
-    private var ascendingVal:Boolean = false
 
     fun setCompositeData(compositeDisposable: CompositeDisposable) {
         this.compositeDisposable = compositeDisposable
     }
 
+    fun setData(data: List<NewsDataList>){
+        this.data = data
+    }
 
     fun getData():List<NewsDataList> {
         return data
