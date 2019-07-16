@@ -47,6 +47,8 @@ class MainActivity : BaseActivity() {
 
     private fun inilializingRecyclerView() {
 
+        recyclerView = recycler_view
+
         recyclerView.layoutManager = LinearLayoutManager(this)
 
 
