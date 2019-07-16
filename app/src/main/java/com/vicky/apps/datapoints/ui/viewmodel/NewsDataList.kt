@@ -3,7 +3,7 @@ package com.vicky.apps.datapoints.ui.viewmodel
 
 import com.google.gson.annotations.SerializedName
 
-data class NewDataList(
+data class NewsDataList(
     @SerializedName("banner_url")
     var bannerUrl: String?,
     @SerializedName("description")

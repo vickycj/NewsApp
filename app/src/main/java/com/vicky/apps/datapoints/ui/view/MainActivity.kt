@@ -60,7 +60,7 @@ class MainActivity : BaseActivity() {
         viewModel.setCompositeData(compositeDisposable)
 
         viewModel.getSubscription().observe(this, Observer {
-            if(it){
+            if(it.isNotEmpty()){
                 successCallback()
             }else{
                 failureCallback()
@@ -69,14 +69,12 @@ class MainActivity : BaseActivity() {
 
 
 
-       // viewModel.getDataFromRemote()
+        viewModel.getDataFromRemote()
     }
 
-    private fun sortAndUpdateData() {
-        updateData()
-    }
+
     private fun successCallback(){
-        updateData()
+        //updateData()
     }
 
     private fun updateData(){

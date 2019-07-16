@@ -17,9 +17,9 @@ class MainViewModel(private val repository: Repository,
 
 
 
-    private val response: MutableLiveData<Boolean> = MutableLiveData()
+    private val response: MutableLiveData<List<NewsDataList>> = MutableLiveData()
 
-    fun getSubscription():MutableLiveData<Boolean> = response
+    fun getSubscription():MutableLiveData<List<NewsDataList>> = response
 
     private lateinit var compositeDisposable: CompositeDisposable
 
@@ -36,14 +36,14 @@ class MainViewModel(private val repository: Repository,
     fun getDataFromRemote() {
 
         compositeDisposable.add(generateApiCall().subscribeBy ( onSuccess = {
-            response.postValue(true)
+            response.postValue(it)
         }, onError = {
             Log.d("valuessss",it.message)
         } ))
 
 
     }
-    fun generateApiCall():Single<List<Any>>{
+    fun generateApiCall():Single<List<NewsDataList>>{
         return repository.getDataFromApi()
             .compose(schedulerProvider.getSchedulersForSingle())
     }
