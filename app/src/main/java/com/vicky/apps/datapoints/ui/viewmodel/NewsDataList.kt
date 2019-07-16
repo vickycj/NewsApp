@@ -13,7 +13,9 @@ data class NewsDataList(
     @SerializedName("rank")
     var rank: Int?,
     @SerializedName("time_created")
-    var timeCreated: Int?,
+    var timeCreated: Long?,
     @SerializedName("title")
-    var title: String?
+    var title: String?,
+
+    var uiDateStamp: String?
 )

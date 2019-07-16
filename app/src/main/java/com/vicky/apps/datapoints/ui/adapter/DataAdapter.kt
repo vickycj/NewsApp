@@ -26,7 +26,7 @@ class DataAdapter constructor(var data:List<NewsDataList>) : RecyclerView.Adapte
         Picasso.get().load(data[position].bannerUrl).into(holder.imageViewContent)
         holder.titleTextView.text = data[position].title
         holder.subtitleTextView.text = data[position].description
-        holder.timeTextView.text = data[position].timeCreated.toString()
+        holder.timeTextView.text = data[position].uiDateStamp.toString()
     }
 
     fun updateData(data: List<NewsDataList>){

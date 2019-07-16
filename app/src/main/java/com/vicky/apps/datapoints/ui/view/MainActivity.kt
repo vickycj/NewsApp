@@ -52,14 +52,12 @@ class MainActivity : BaseActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
 
-        adapter = DataAdapter(getEmptyData())
+        adapter = DataAdapter(viewModel.getData())
 
         recyclerView.adapter = adapter
     }
 
-    private fun getEmptyData(): List<NewsDataList> {
-        return ArrayList()
-    }
+
 
     private fun initializeValues() {
 
